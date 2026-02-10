@@ -1,6 +1,5 @@
-import json
-import os
 from Models.CBook import Book
+from JsonFactory import *
 
 class BookList:
     def __init__(self):
@@ -9,50 +8,27 @@ class BookList:
         self.load_books()
 
     def load_books(self):
-        if not os.path.exists(self.file):
-            print(f"File {self.file} không tồn tại.")
-            return
-        try:
-            with open(self.file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                self.book_list = []
-                for item in data:
-                    book = Book(
-                        book_id = item["book_id"],
-                        book_name = item["book_name"],
-                        author = item["author"],
-                        book_type = item["type"],  # Trong JSON là 'type'
-                        published_year = item["published_year"],
-                        price = item["price"],  # Thêm price từ JSON
-                        quantity = item["quantity"]
-                    )
-                    self.book_list.append(book)
-            print(f"Đã tải thành công {len(self.book_list)} cuốn sách.")
-        except Exception as e:
-            print(f"Lỗi khi đọc file JSON: {e}")
+        data = JsonFileFactory.read_data(self.file)
+        self.book_list = []
+
+        for item in data:
+            book = Book(
+                item["book_id"],
+                item["book_name"],
+                item["author"],
+                item["type"],
+                item["published_year"],
+                item["price"],
+                item["quantity"]
+            )
+            self.book_list.append(book)
+
+    def get_all_books(self):
+        return self.book_list
 
     def save_books(self):
-        data_to_save = []
-        for b in self.book_list:
-            data_to_save.append({
-                "book_id": b.book_id,
-                "book_name": b.book_name,
-                "author": b.author,
-                "type": b.book_type,
-                "published_year": b.published_year,
-                "price": b.price,
-                "quantity": b.quantity
-            })
-
-        try:
-            with open(self.file, 'w', encoding='utf-8') as f:
-                json.dump(data_to_save, f, ensure_ascii=False, indent=4)
-        except Exception as e:
-            print(f"Lỗi khi lưu file: {e}")
-
-    def get_all_book(self):
-        self.load_books()
-        return self.book_list
+        data = [book.to_dict() for book in self.book_list]
+        JsonFileFactory.write_data(self.file, data)
 
     def add_book(self, book):
         for b in self.book_list:
@@ -91,8 +67,7 @@ class BookList:
                 keyword in book.author.lower() or
                 keyword in book.book_type.lower()):
                  result.append(book) # Đưa vào danh sách result
-            return result
-        return None
+        return result
 
     def show_book(self):
         if not self.book_list:
