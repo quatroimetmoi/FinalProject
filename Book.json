@@ -1,0 +1,92 @@
+[
+  {
+    "book_id": "001",
+    "book_name": "Số Đỏ",
+    "author": "Nguyễn Trọng Phụng",
+    "type": "Tiểu thuyết",
+    "published_year": 1938,
+    "price": 15000,
+    "quantity": 2
+  },
+  {
+    "book_id": "002",
+    "book_name": "Nhà Giả Kim",
+    "author": "Paulo Coelho",
+    "type": "Tiểu thuyết",
+    "published_year": 1988,
+    "price": 20000,
+    "quantity": 2
+  },
+  {
+    "book_id": "003",
+    "book_name": "Cuộc Điều Tra Màu Đỏ",
+    "author": "Conan Doyle",
+    "type": "Tiểu thuyết, trinh thám",
+    "published_year": 1887,
+    "price": 25000,
+    "quantity": 3
+  },
+  {
+    "book_id": "004",
+    "book_name": "Án Mạng Trên Núi Phú Sĩ",
+    "author": "Shizuko Natsuki ",
+    "type": "Tiểu thuyết, trinh thám, kinh dị",
+    "published_year": 1982,
+    "price": 20000,
+    "quantity": 2
+  },
+  {
+    "book_id": "005",
+    "book_name": "Cây Cam Ngọt Của Tôi",
+    "author": "José Mauro de Vasconcelos",
+    "type": "Tiểu thuyết, tự truyện, văn học thiếu nhi",
+    "published_year": 1968,
+    "price": 15000,
+    "quantity": 2
+  },
+  {
+    "book_id": "006",
+    "book_name": "Một Thoáng Ta Rực Rỡ Ở Nhân Gian",
+    "author": "Ocean Vuong",
+    "type": "Tiểu thuyết, nhân văn",
+    "published_year": 2021,
+    "price": 15000,
+    "quantity": 3
+  },
+  {
+    "book_id": "007",
+    "book_name": "Cánh Đồng Bất Tận",
+    "author": "Nguyễn Ngọc Tư",
+    "type": "Truyện ngắn",
+    "published_year": 2005,
+    "price": 10000,
+    "quantity": 2
+  },
+  {
+    "book_id": "008",
+    "book_name": "Hoàng Tử Bé",
+    "author": "Antoine de Saint-Exupéry",
+    "type": "Văn học thiếu nhi, tiểu thuyết ngắn",
+    "published_year": 1966,
+    "price": 15000,
+    "quantity": 2
+  },
+  {
+    "book_id": "009",
+    "book_name": "Nếu Biết Trăm Năm Là Hữu Hạn",
+    "author": "Phạm Lữ Ân",
+    "type": "Tản văn",
+    "published_year": 2012,
+    "price": 10000,
+    "quantity": 2
+  },
+  {
+    "book_id": "010",
+    "book_name": "Xứ Sở Miên Man",
+    "author": "Jun Phạm",
+    "type": "Truyện thiếu nhi, văn học thiếu nhi, giả tưởng",
+    "published_year": 2023,
+    "price": 15000,
+    "quantity": 2
+  }
+]
